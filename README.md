@@ -18,9 +18,13 @@ Then, install Golang https://golang.org/doc/install/source
 At the end of the output, you will see that the go installer asks you to ass a binary directory to your path for easy access. The following commands can accomplish this:
 
 PATH=$PATH:/home/pi/go/bin
+
 export PATH
+
 export GOROOT=/home pi/go
+
 export GOPATH=/home/pi/gopath
+
 Put this commands in the /etc/profile file in order to execute them for each session that you start in the future.
 
 Next step is to download the Gatt package source files:
@@ -34,6 +38,8 @@ To your home directory it ussually /home/pi add all Python files from the Raspbe
 To start a BLE server use the following commands:
 
 cd /home/pi/gopath/src/github.com/paypal/gatt
+
 go build examples/server.go
+
 sudo ./server
 
