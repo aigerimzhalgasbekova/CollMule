@@ -15,4 +15,25 @@ The app can be downloaded, built and ran on a smart device.
 The RaspberryPi folder consists code sources for different purposes and have to be placed in different directories. However, the first thing you need to do is to setup Raspbian (https://www.raspberrypi.org/downloads/raspbian/) and install software for SenslyHat (http://www.instructables.com/id/Sensly-Hat-for-the-Raspberry-Pi-Air-Quality-Gas-De/).
 After you have to install Bluez (in this link you will find a nice tutorial https://stackoverflow.com/questions/41351514/leadvertisingmanager1-missing-from-dbus-objectmanager-getmanagedobjects)
 Then, install Golang https://golang.org/doc/install/source
+At the end of the output, you will see that the go installer asks you to ass a binary directory to your path for easy access. The following commands can accomplish this:
+
+PATH=$PATH:/home/pi/go/bin
+export PATH
+export GOROOT=/home pi/go
+export GOPATH=/home/pi/gopath
+Put this commands in the /etc/profile file in order to execute them for each session that you start in the future.
+
+Next step is to download the Gatt package source files:
+
+go get github.com/paypal/gatt
+
+Now, you have to go to /home/pi/gopath/src/github.com/paypal/gatt/examples and change server.go file to the server.go file from RaspberryPi folder of this repository.
+After, go to directory /home/pi/gopath/src/github.com/paypal/gatt/examples/service and add there iaq.go file.
+To your home directory it ussually /home/pi add all Python files from the RaspberryPi folder.
+
+To start a BLE server use the following commands:
+
+cd /home/pi/gopath/src/github.com/paypal/gatt
+go build examples/server.go
+sudo ./server
 
