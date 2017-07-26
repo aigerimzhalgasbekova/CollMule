@@ -1,4 +1,6 @@
 # CollMule
+IN THE DOCUMENTING PROCESS
+
 CollMule is my Master Thesis project which title is ""CollMule: An opportunistic data collection system for IoT-based Indoor Air Quality Monitoring"
 
 Supervised by Prof. Arkady Zaslavsky, Dr Saguna, Dr Karan Mitra and Dr. Prem Prakash Jayaraman
