@@ -97,6 +97,7 @@ func main() {
 	select {}
 }
 
+// Checks if the PM concentration equals to zero (I had cheap sensors that worked quite incorrectly)
 func check() bool{
 	out, err := exec.Command("sh", "-c", "sudo python /home/pi/PMconc.py").Output()
               if err != nil {
@@ -113,6 +114,7 @@ func check() bool{
 	    return acc
 }
 
+// Estimates power level of Rasppberry Pi according to the average amounts of consumed power during advertising and connection periods
 func EstimPowerLevel(n int) func() (int, bool) {
         pwr := 0.0
         res := 0
@@ -129,6 +131,7 @@ func EstimPowerLevel(n int) func() (int, bool) {
 	}
 }
 
+// to count seconds in advertising period
 func tick() {
 	
 	go func() {
@@ -138,6 +141,8 @@ func tick() {
 		}
 	}()
 }
+
+// to count seconds in connection period
 func tick1() {
 	go func() {
 		for range ticker1.C {

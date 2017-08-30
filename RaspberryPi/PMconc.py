@@ -1,7 +1,6 @@
 import sys
 sys.path.append('/home/pi/Sensly/')
 import smbus
-##import RPi.GPPIO as GPIO
 from Sensors import Sensor, Gas
 from bme_combo import *
 PM = Sensor('PM',0,0)
